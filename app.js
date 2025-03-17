@@ -7,7 +7,8 @@ function agregarAmigo() {
         alert('Por favor, inserte un nombre.');
     } else {
         nombres.push(campoNombre.value.trim());
-        console.log(nombres);
+        nombres.sort();
+        actualizarListaAmigos();
     }
     return;
 }
@@ -21,4 +22,15 @@ function actualizarListaAmigos() {
         listaAmigos.appendChild(item);
     }
     return;
+}
+
+function sortearAmigo() {
+    
+    if (nombres === undefined){
+        alert('No hay amigos agregados.');
+    }{
+        let numeroAleatorio = Math.floor(Math.random()*nombres.length)+1;
+        let resultado = document.getElementById('resultado');
+        resultado.textContent = 'El amigo elegido es: '+nombres[numeroAleatorio-1];
+    }
 }
